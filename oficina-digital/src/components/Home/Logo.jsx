@@ -9,7 +9,7 @@ function Logo() {
                 <img src={logo} alt='Logo' />
             </div>}
             <div className='titulo'>
-                {<h1>Parafuso Solto Digital</h1>}
+                <h1>Parafuso Solto Digital</h1>
             </div>
         </div>
     )
