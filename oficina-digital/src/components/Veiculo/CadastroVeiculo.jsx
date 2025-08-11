@@ -17,7 +17,6 @@ function CadastroVeiculo() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        alert(sucesso,  error);
 
         
         // Dados do veículo a serem enviados
@@ -143,6 +142,9 @@ function CadastroVeiculo() {
             <div id='image-carro'>
                 <img src={carro} alt='img' />
             </div>
+
+            <p className="sucesso">{sucesso}</p>
+            <p className="erro">{error}</p>
 
         </div>
     );

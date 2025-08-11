@@ -16,7 +16,7 @@ function Home() {
                 <div className='Logo-esquerdo'>
                     <img src={carro1} alt="Carro1" />
                     <p>
-                    Bem-vindo ao seu espaço de trabalho. <br/>Conte com este sistema para facilitar o seu dia a dia.
+                    Bem-vindo ao seu espaço de trabalho... <br/>Conte com este sistema para facilitar o seu dia a dia.
                     </p>
                 </div>
                 <div className='Logo-direito'>

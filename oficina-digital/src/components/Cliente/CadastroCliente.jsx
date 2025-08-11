@@ -15,7 +15,6 @@ function CadastroCliente() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        alert(mensagem);
         
         const clienteData = {
             nome, 
@@ -26,14 +25,14 @@ function CadastroCliente() {
         
         try {
             const  response = await cadastrarCliente(clienteData);
-            setMensagem(response.message); // Mensagem de sucesso
+            setMensagem(response.message); 
             setNome("");
             setCpf("");
             setEndereco("");
             setTelefone("");
 
         } catch (error) {
-            setMensagem("Erro ao cadastrar cliente. Tente novamente.");
+            setMensagem("Erro ao cadastrar cliente! Tente novamente...");
         }
     };
 
@@ -98,6 +97,10 @@ function CadastroCliente() {
             <div className='mecanico'>
                 <img src={Mecanico} alt='mecanico' />
             </div>
+
+            <p className="msg">{mensagem}</p>
+
+
         </section>
     )
 }

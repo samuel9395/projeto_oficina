@@ -5,12 +5,12 @@ $button-color: #7a7a7a;
     margin: 0px;
     padding: 0px;
     background-color: $base-color;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container-veiculo {
     width: 100%;
     height: 100%;
-    margin-bottom: 20px;
 
     .image-pneu {
         display: flex;
@@ -25,7 +25,7 @@ $button-color: #7a7a7a;
 
     form {
         color: white;
-        margin-top: -100px;
+        margin-top: -170px;
 
         form.titulo {
             width: 100%;
@@ -84,9 +84,19 @@ $button-color: #7a7a7a;
         }
     }
 
-}
+    .sucesso {
+        background-color: white;
+        color: black;
+        width: fit-content;
+        font-size: 17px;
+        margin-left: 20%;
+    }
 
-    /*
-        align-items: flex-start;
-        margin-left: 3%;
-    */
+    .erro {
+        background-color: white;
+        color: red;
+        width: fit-content;
+        font-size: 17px;
+        margin-left: 20%;
+    }
+}
