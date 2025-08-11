@@ -1,0 +1,55 @@
+$base-color: #2C69B0;
+
+.Home {
+    background-color: $base-color;
+    
+    .Body {
+        background-color: $base-color;
+        height: 100%;
+       
+
+        .Logo-esquerdo {
+            display: flex;
+            align-items: first baseline;
+            flex-direction: column;
+            margin-left: 10px;
+            
+
+            img {
+                width: 500px;
+                height: 500px;
+            }
+
+            p {
+                font-size: 18px;
+                color: #fff;
+                margin-top: 50px;
+                font-style: italic;
+                text-decoration: underline;
+            }
+        }
+
+        .Logo-direito {
+            display: grid;
+            justify-content: flex-end;
+
+            img {
+              width: 500px;
+              height: 500px;
+              margin-top: -411px;
+              margin-right: 50px;
+              animation: mover-carro 7s infinite linear;
+
+              @keyframes mover-carro {
+                from {
+                  transform: translateX(0);
+                }
+                to {
+                  transform: translateX(50px);
+                }
+              }
+            }
+        }
+    }
+}
+

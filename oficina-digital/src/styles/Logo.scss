@@ -1,0 +1,51 @@
+$base-color: #2C69B0;
+$color-title: #a9bcd2;
+
+.Logo {
+  display: flex;
+  background-color: $base-color;
+  height: 125px;
+  width: 100%;
+  position: relative;
+  align-items: center;
+
+  img {
+    top: 3px;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 15px;
+    transform: rotate(180deg);
+    animation: girar 4s infinite linear;
+
+    @keyframes girar {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+} 
+
+
+
+.titulo {
+    color: white;
+    flex-grow: 1; // Isso faz com que a seção de título ocupe o espaço disponível
+}
+
+.titulo h1 {
+    margin: 0; // Remove a margem padrão do h1
+    font-family: 'Alegreya';
+    
+
+    &:hover {
+        color: $color-title;
+    }
+}
+
+/*
+Garamond, Merriweather
+*/

@@ -1,0 +1,91 @@
+$base-color: #2C69B0;
+/*#a0c3eb*/
+
+* {
+  background-color: white;
+}
+
+.Menu {
+    display: flex;
+    justify-content: flex-end; // Mudado para flex-end
+    padding-right: 70px; // Adicionado padding à direita
+    background-color: white;
+    height: 80px;
+
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      margin-left: 50px; // Adicionado margem à esquerda para espaçamento entre itens
+      font-weight: bold;
+
+      img {
+        width: 60px;
+        height: 60px;
+        background-color: white;
+      }
+      
+
+      h5 {
+        margin: 0;
+        font-size: 19px;
+        display: inline-block;
+        background-color: white;
+      }
+      
+
+      .seta-baixo {
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        transition: transform 0.5s ease;
+        display: inline; 
+        vertical-align: middle; 
+        top: 0px;
+
+        &.rotated {
+          transform: rotate(180deg);
+        }
+      }
+
+      .submenu {
+        list-style-type: none;
+        padding: 0;
+        margin: 10px 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        li {
+          margin-bottom: 5px;
+          font-size: 17px;
+          cursor: pointer;
+          font-weight: 700;
+          color: #fff;
+
+          &:hover {
+            text-decoration: underline;
+            color: $base-color;
+          }
+
+          .opcao {
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+              text-decoration: underline;
+              color: $base-color;
+              background-color: white;
+              width: max-content;
+              padding: 3px;
+
+            }
+          }
+          
+        }
+      }
+    }
+  }

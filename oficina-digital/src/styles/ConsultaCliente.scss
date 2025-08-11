@@ -1,0 +1,148 @@
+$cor-fundo: #fffbf0;
+$base-color: #2C69B0;
+$button-color: #7a7a7a;
+
+* {
+    background-color: white;
+}
+
+.consulta {
+    background-color: $base-color;
+    width: 100%;
+
+    .image-consulta {
+        display: flex;
+        width: 150px;
+        height: 150px;
+        margin-top: 0px;
+        margin-left: -27px;
+    }
+
+    .titulo-consulta h3 {
+        margin-top: 0;
+        display: flex;
+        align-items: first baseline;
+        color: #fff;
+        font-size: larger;
+        font-weight: 700;
+        margin-left: 20%;
+        margin-top: -100px;
+        margin-bottom: 30px;
+    }
+
+    .input-cpf {
+        background-color: white;
+        margin-top: -30px;
+        display: flex;
+        width: 300px;
+        height: 25px;
+        text-align: start;
+        align-items: first baseline;
+        margin-left: 20%;
+        font-size: medium;
+        font-weight: 600;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .btn-buscar {
+        color: #fff;
+        background-color: $button-color;
+        display: flex;
+        align-items: first baseline;
+        margin-left: 20%;
+        width: max-content;
+        height: 30px;
+        text-align: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: medium;
+        margin-bottom: 1%;
+    }
+
+    .tela-consulta {
+        display: flex;
+        background-color: $cor-fundo;
+        margin-left: 20%;
+        margin-top: 20px; /* Adiciona um espaçamento entre o botão e os dados */
+        padding: 5px;
+        border-radius: 8px; // Deixa os cantos arredondados
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); // Adiciona uma leve sombra
+        width: 500px; // Define uma largura máxima para manter a apresentação organizada
+        height: 300px;
+        text-align: left;
+
+        .dados-cliente {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; // Espaçamento entre os parágrafos
+            width: 100%;
+
+            h4 {
+                background-color: white;
+                color: black;
+                text-decoration: none;
+                text-align: center;
+            }
+
+            p {
+                background-color: white;
+                margin-bottom: -5px;
+                text-align: left;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            strong {
+                background-color: white;
+                margin-right: 5px;
+                font-size: 19px;
+            }
+        }
+
+        h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: $base-color;
+            text-decoration: underline;
+        }
+
+        p {
+            background-color: white;
+            font-size: small;
+            color: #333;
+            line-height: 1.5; // Melhora a legibilidade
+        }
+
+        .msg {
+            background-color: white;
+            font-size: 1rem;
+            color: #ff0000;
+            margin-top: 10px;
+        }
+
+        .erro {
+            background-color: white;
+            font-size: 1rem;
+            color: #ff0000;
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+
+    .mecanico {
+        display: flex;
+        position: absolute;
+        margin-top: -50px;
+        margin-left: 10%;
+        background-color: $base-color;
+        height: 20px;
+
+        img {
+            height: 500px;
+            width: 200px;
+        }
+    }
+}

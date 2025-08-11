@@ -1,0 +1,111 @@
+$button-color: #7a7a7a;
+$base-color: #2C69B0;
+
+.box {
+    height: 90vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+    .imagem-bau {
+        display: flex;
+        width: 150px;
+        height: 150px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    form {
+        width: 80%;
+        margin-top: -100px;
+
+
+        h3 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* Duas colunas */
+            gap: 10px;
+            /* Espaçamento entre os campos */
+            line-height: 30px;
+            max-width: 600px;
+            /* Largura máxima */
+            height: 700px;
+
+
+            label {
+                display: flex;
+                flex-direction: column;
+                font-weight: bold;
+            }
+
+            input {
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                width: 130px;
+            }
+
+            textarea {
+                background-color: white;
+                width: 300px;
+                height: 100px;
+                text-align: justify;
+                resize: none;
+                /* opcional - desabilita o redimensionamento */
+                padding: 8px;
+                font-family: inherit;
+            }
+
+            .caixa-input {
+                width: 70px;
+            }
+
+            .data-input {
+                width: 100px;
+            }
+
+            .obs-input {
+                height: 50px;
+            }
+
+            .status-input {
+                background-color: white;
+                padding: 0px;
+
+                option {
+                    background-color: white;
+                }
+            }
+        }
+
+        #btn {
+            text-align: left;
+            margin: 0px;
+
+            button {
+                background-color: $button-color;
+                width: max-content;
+                color: white;
+            }
+        }
+
+    }
+
+    .msg p{
+        width: fit-content;
+        margin: auto;
+        background-color: white;
+        margin-top: 100px;
+        font-size: 17px;
+        padding: 2px;
+    }
+}
+
+/**
+        background-color: 'white';
+
+*/

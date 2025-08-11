@@ -1,0 +1,102 @@
+$base-color: #2C69B0;
+$button-color: #7a7a7a;
+
+* {
+    background-color: white;
+}
+
+section {
+    height: 100%;
+    background-color: $base-color;
+
+    .image-cadastro {
+        display: flex;
+        width: 150px;
+        height: 150px;
+        margin-top: 0px;
+        margin-left: -27px;
+    }
+
+    .titulo-cadastro h3 {
+        display: flex;
+        color: #fff;
+        font-size: larger;
+        font-weight: 700;
+        margin-top: -100px;
+        margin-bottom: 20px;
+        align-items: flex-start;
+        margin-left: 20%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        height: 400px;
+        margin-left: 20%;
+        text-align: left;
+        margin-top: 0px;
+
+        label {
+            color: #fff;
+            font-size: 20px;
+            font-family: sans-serif;
+            font-weight: 600;
+            font-style: italic;
+            display: flex;
+            flex-direction: column;
+            align-items: first baseline;
+            margin-bottom: 10px;
+
+
+
+            input {
+                background-color: white;
+                padding: 3px;
+                margin-top: 10px;
+                width: 300px;
+                margin-bottom: 10px;
+            }
+
+            .input-cpf {
+                width: 90px;
+            }
+
+            .endereco {
+                width: 370px;
+            }
+
+            .text-telefone {
+                display: flex;
+                justify-content: left;
+            }
+
+            .telefone {
+                width: 150px;
+            }
+        }
+
+        button {
+            color: #fff;
+            background-color: $button-color;
+            width: 100px;
+            height: 25px;
+            text-align: center;
+            font-weight: 600;
+            font-size: medium;
+            margin-top: -1%;
+            ;
+
+        }
+    }
+
+    .mecanico {
+        position: absolute;
+        display: flex;
+        left: 70%;
+        top: 35%;
+        height: 600px;
+        margin-right: 2%;
+    }
+
+}

@@ -1,0 +1,89 @@
+$button-color: #7a7a7a;
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.consulta-veiculo {
+    width: 100%;
+
+
+    .imagem-consulta {
+        display: flex;
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .busca {
+        text-align: center;
+        margin-top: -100px;
+        color: white;
+        margin-bottom: 30px;
+
+        input {
+            background-color: white;
+            padding: 5px;
+        }
+
+        .btn-buscar {
+            color: white;
+            background-color: $button-color;
+            padding: 5px;
+            margin-left: 3px;
+            font-weight: bold;
+        }
+    }
+
+    .tela-consulta {
+        background-color: white;
+        width: 400px;
+        height: 300px;
+        margin: auto;
+        color: black;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+        .dados-veiculo {
+            background-color: white;
+        }
+
+        h4 {
+            background-color: white;
+            padding: 7px;
+        }
+
+        p {
+            background-color: white;
+            margin-top: 10px;
+            color: #6c6c6c;
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+
+            strong {
+                background-color: white;
+                color: black;
+                margin-right: 5px;
+                font-size: 19px;
+
+            }
+        }
+
+        .msg-veiculo {
+            background-color: white;
+            text-align: left;
+            color: red;
+
+        }
+
+
+
+    }
+
+}
