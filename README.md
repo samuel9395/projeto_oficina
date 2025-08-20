@@ -4,8 +4,8 @@ Um sistema simples para gerenciamento de oficina automotiva.
 
 Atualmente, a aplicação permite:
 
-- Cadastro e consulta de clientes
-- Cadastro e consulta de veículos
+- Cadastro e consulta de clientes por cpf
+- Cadastro e consulta de veículos por placa
 - Cadastro de serviços, e consulta  de serviços por placa
 
 Em breve serão adicionadas novas funcionalidades, incluindo:
