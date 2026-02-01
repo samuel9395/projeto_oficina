@@ -1,46 +1,47 @@
-const baseUrl = 'http://localhost:8080/api/clientes';
+const baseUrl = `${process.env.REACT_APP_API_URL || 'http://localhost:8080/api'}/clientes`;
 
-export const cadastrarCliente = async (clienteData) => {
+// Buscar todos os clientes com paginação e filtro opcional por nome
+export const listarClientes = async (nome = '', page = 0, size = 10) => {
     try {
-        const response = await fetch(baseUrl, {
-            method: 'POST',
+        const params = new URLSearchParams({
+            nome,
+            page,
+            size
+        });
+
+        const response = await fetch(`${baseUrl}?${params}`, {
+            method: 'GET',
+            mode: 'cors',
             headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(clienteData),
+                'Accept': 'application/json',
+            }
         });
 
         if (!response.ok) {
-            throw new Error("Erro ao cadastrar cliente: ");
+            throw new Error(`Erro HTTP: ${response.status}`);
         }
 
-        const data = await response.json();
-        return data;
+        return await response.json();
 
     } catch (error) {
-        console.log('Erro ao cadastrar cliente: ', error);
-        throw Error;
+        console.error('Erro ao listar clientes:', error);
+        throw error;
     }
 };
 
-export const consultaClienteCpf = async (cpf) => {
+// Buscar cliente por nome (busca no backend com paginação)
+export const buscarClientePorNome = async (nome) => {
     try {
-        const response = await fetch(`${baseUrl}/${cpf}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-
-        if (!response.ok) {
-            throw new Error('Erro ao buscar cliente');
+        const response = await listarClientes(nome, 0, 100);
+        
+        if (!response.content || response.content.length === 0) {
+            throw new Error('Cliente não encontrado');
         }
 
-        const data = await response.json();
-        return data.cliente; // Retorna apenas o cliente, sem o encapsulamento
+        return response.content[0]; // Retorna o primeiro cliente encontrado
 
     } catch (error) {
-        console.log('Erro ao buscar cliente: ', error);
+        console.error('Erro ao buscar cliente por nome:', error);
         throw error;
     }
 };

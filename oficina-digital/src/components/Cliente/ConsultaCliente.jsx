@@ -2,20 +2,20 @@ import React, {useState} from 'react';
 import './../../styles/ConsultaCliente.scss';
 import Chave from '../../assets/chaves.svg';
 import mecanico from '../../assets/mecanico-cadastro.svg'
-import { consultaClienteCpf } from '../../services/clienteApi';
+import { buscarClientePorNome } from '../../services/clienteApi';
 
 function ConsultaCliente() {
-    const [cpf, setCpf] = useState('');
+    const [nome, setNome] = useState('');
     const [cliente, setCliente] = useState('');
     const [erro, setErro] = useState('');
 
     const hundleInputChange = (e) => {
-        setCpf(e.target.value);
+        setNome(e.target.value);
     };
 
     const hundleBuscarCliente = async () => {
         try {
-            const dadosCliente = await consultaClienteCpf(cpf);
+            const dadosCliente = await buscarClientePorNome(nome);
             setCliente(dadosCliente); // Define os dados do cliente
             setErro(''); // Limpa qualquer erro anterior
         } catch (error) {
@@ -31,14 +31,14 @@ function ConsultaCliente() {
                     <img src={Chave} alt='img'/>
                 </div>
                 <div className='titulo-consulta'>
-                    <h3>Consultar condutor</h3>
+                    <h3>Consultar Cliente</h3>
                 </div>
                 
                 <input 
                     type="text" 
-                    placeholder="Digite o cpf do condutor" 
+                    placeholder="Digite o nome do cliente" 
                     className='input-cpf'
-                    value={cpf}
+                    value={nome}
                     onChange={hundleInputChange}
                 />
 
@@ -50,9 +50,15 @@ function ConsultaCliente() {
                         <div className="dados-cliente">
                             <h4>Dados do Cliente</h4>
                             <p><strong>Nome:</strong> {cliente.nome}</p>
-                            <p><strong>CPF:</strong> {cliente.cpf}</p>
-                            <p><strong>Endereço:</strong> {cliente.endereco}</p>
                             <p><strong>Telefone:</strong> {cliente.telefone}</p>
+                            {cliente.veiculoId && (
+                                <>
+                                    <p><strong>Veículo ID:</strong> {cliente.veiculoId}</p>
+                                    <p><strong>Placa:</strong> {cliente.placa}</p>
+                                    <p><strong>Modelo:</strong> {cliente.modelo}</p>
+                                    <p><strong>Marca:</strong> {cliente.marca}</p>
+                                </>
+                            )}
                         </div>
                     ) : (
                     <p className='msg'>Nenhum cliente encontrado.<br/>{erro}</p>

@@ -15,7 +15,9 @@ function ConsultaServico() {
     const handleBuscarServico = async () => {
         try {
             const dados = await consultaServico(placa);
-            setServicos(dados.servicos);
+            // O backend retorna um array ou um objeto com array de serviços
+            const servicosArray = Array.isArray(dados) ? dados : (dados.servicos || []);
+            setServicos(servicosArray);
             setErro('');
         } catch (error) {
             setErro('Nenhum serviço encontrado para essa placa ou erro na busca!');
@@ -43,30 +45,23 @@ function ConsultaServico() {
 
             <section className="tela-consulta">
                 {
-                    servicos ? (
+                    servicos && servicos.length > 0 ? (
                         <div className="dados-servico">
                             <h4>Serviços encontrados</h4>
                             <hr/>
                             {servicos.map((s, index) => (
                                 <div key={index} className="servico-item">
-                                    <p><strong>Placa:</strong> {s.placa}</p>
-                                    <p><strong>Serviço:</strong> {s.tipo_servico}</p>
+                                    <p><strong>Serviço ID:</strong> {s.id}</p>
                                     <p><strong>Descrição:</strong> 
                                     <br/>{s.descricao}
                                     </p>
-                                    <p><strong>Garantia:</strong> {s.garantia}</p>
-                                    <p><strong>Status:</strong> {s.status}</p>
-                                    <p><strong>Data:</strong> {s.data_servico}</p>
-                                    <p><strong>Valor:</strong> R$ {s.valor_total}</p>
-                                    <p><strong>Peças:</strong> {s.pecas_utilizadas}</p>
-                                    <p><strong>Observações:</strong> {s.obs}</p>
+                                    <p><strong>Valor:</strong> R$ {s.valorServico}</p>
                                     <hr/>
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <p className="msg-servico"><br /> {erro}</p>
-                    )
+                        <p className="msg-servico"><br /> {erro || 'Nenhum serviço encontrado'}</p>                    )
                 }
             </section>
         </div>

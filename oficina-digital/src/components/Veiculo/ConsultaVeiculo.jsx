@@ -48,14 +48,13 @@ function ConsultaVeiculo() {
                 {
                     veiculo ? (
                         <div className="dados-veiculo">
-                            <h4>Dados do veículo</h4>
-                            <p><strong>Placa:</strong>{veiculo.placa}</p>
-                            <p><strong>Modelo:</strong>{veiculo.modelo}</p>
-                            <p><strong>Marca:</strong>{veiculo.marca}</p>
-                            <p><strong>Ano:</strong>{veiculo.ano}</p>
-                            <p><strong>Cor:</strong>{veiculo.cor}</p>
-                            <p><strong>Km:</strong>{veiculo.km}</p>
-                            <p><strong>Condutor:</strong>{veiculo.cpf}</p>
+                            <h4>Dados do Veículo</h4>
+                            <p><strong>Placa:</strong> {veiculo.placa}</p>
+                            <p><strong>Modelo:</strong> {veiculo.modelo}</p>
+                            <p><strong>Marca:</strong> {veiculo.marca}</p>
+                            <p><strong>Ano de Fabricação:</strong> {veiculo.anoFabricacao}</p>
+                            <p><strong>Cor:</strong> {veiculo.cor}</p>
+                            <p><strong>Kilometragem:</strong> {veiculo.kilometragem}</p>
                         </div>
                     ) : (
                         <p className="msg-veiculo"><br/> {erro}</p>

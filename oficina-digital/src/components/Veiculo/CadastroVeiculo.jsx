@@ -8,40 +8,41 @@ function CadastroVeiculo() {
     const [placa, setPlaca] = useState("");
     const [marca, setMarca] = useState("");
     const [modelo, setModelo] = useState("");
-    const [ano, setAno] = useState("");
+    const [anoFabricacao, setAnoFabricacao] = useState("");
     const [cor, setCor] = useState("");
-    const [km, setKm] = useState("");
-    const [cpf, setCpf] = useState(""); // CPF do cliente associado
+    const [kilometragem, setKilometragem] = useState("");
+    const [clienteId, setClienteId] = useState(""); // ID do cliente associado
     const [error, setErro] = useState("");
     const [sucesso, setSucesso] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        
-        // Dados do veículo a serem enviados
+        // Dados do veículo a serem enviados conforme o backend espera
         const veiculoData = {
             placa,
             marca,
             modelo,
-            ano,
+            anoFabricacao,
             cor,
-            km,
-            cpf,
+            kilometragem,
+            cliente: {
+                id: parseInt(clienteId)
+            }
         };
 
         try {
             const response = await cadastrarVeiculo(veiculoData);
-            setSucesso("Veículo cadastrado com sucesso!", response);
+            setSucesso("Veículo cadastrado com sucesso!");
             setErro(""); // Limpa qualquer mensagem de erro anterior
             // Limpa os campos após o cadastro
             setPlaca("");
             setMarca("");
             setModelo("");
-            setAno("");
+            setAnoFabricacao("");
             setCor("");
-            setKm("");
-            setCpf("");
+            setKilometragem("");
+            setClienteId("");
         } catch (error) {
             setErro("Erro ao cadastrar o veículo. Verifique os dados e tente novamente.");
         }
@@ -60,6 +61,16 @@ function CadastroVeiculo() {
 
                 <div className='conteudo'>
                     <div className="form-grid">
+                        <label>
+                            ID do Cliente:
+                            <input 
+                                type="number" 
+                                placeholder="ID do Cliente" 
+                                value={clienteId} 
+                                onChange={(e) => setClienteId(e.target.value)} 
+                                required
+                            />
+                        </label>
                         <label>
                             Placa:
                             <input 
@@ -91,12 +102,12 @@ function CadastroVeiculo() {
                             />
                         </label>
                         <label>
-                            Ano:
+                            Ano de Fabricação:
                             <input 
-                                type="text" 
-                                placeholder="Ano" 
-                                value={ano} 
-                                onChange={(e) => setAno(e.target.value)} 
+                                type="date" 
+                                placeholder="Ano de Fabricação" 
+                                value={anoFabricacao} 
+                                onChange={(e) => setAnoFabricacao(e.target.value)} 
                                 required
                             />
                         </label>
@@ -115,18 +126,8 @@ function CadastroVeiculo() {
                             <input 
                                 type="text" 
                                 placeholder="Kilometragem" 
-                                value={km} 
-                                onChange={(e) => setKm(e.target.value)} 
-                                required
-                            />
-                        </label>
-                        <label>
-                            CPF:
-                            <input 
-                                type="text" 
-                                placeholder="CPF do Cliente" 
-                                value={cpf} 
-                                onChange={(e) => setCpf(e.target.value)} 
+                                value={kilometragem} 
+                                onChange={(e) => setKilometragem(e.target.value)} 
                                 required
                             />
                         </label>
