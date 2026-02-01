@@ -267,4 +267,4 @@ Samuel Bitencourt
 
 ## 📄 Licença
 
-MIT
+MIT Licence
